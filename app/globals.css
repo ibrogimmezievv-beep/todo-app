@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply transition-colors duration-200;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-todo-900 text-todo-100;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-todo-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-todo-600 rounded hover:bg-todo-500;
+}
+
+/* Focus visible */
+:focus-visible {
+  @apply outline-none ring-2 ring-todo-accent ring-offset-2 ring-offset-todo-900;
+}
+
+/* Animations */
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
